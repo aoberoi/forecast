@@ -1,0 +1,4 @@
+/.build
+.gitignore
+.swift-version
+README.md
