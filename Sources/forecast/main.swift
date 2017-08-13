@@ -1,10 +1,13 @@
 import Foundation
 import Dispatch
 
-let darkSkySecretKey = "0132f30663560ef7cbe88d63e6c15781"
-
 let lat = 37.7749
 let long = -122.4194
+
+guard let darkSkySecretKey = ProcessInfo.processInfo.environment["DARKSKY_SECRET"] else {
+  print("DarkSky Secret not found")
+  exit(-1)
+}
 
 let defaultSession = URLSession(configuration: .default)
 if let forecastUrl = URL(string: "https://api.darksky.net/forecast/\(darkSkySecretKey)/\(lat),\(long)") {
@@ -42,6 +45,4 @@ if let forecastUrl = URL(string: "https://api.darksky.net/forecast/\(darkSkySecr
     print("Could not form forecastUrl")
 }
 
-
-print("Hello, world!")
 dispatchMain()
