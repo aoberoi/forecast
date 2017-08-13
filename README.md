@@ -37,11 +37,12 @@ environment variable `DARKSKY_SECRET`.
 
 #### macOS
 
-1. The executable will be output to `DARKSKY_SECRET=XXX .build/release/forecast`, just invoke it from the command line.
+1. Invoke `DARKSKY_SECRET=XXX .build/release/forecast` from the command line, replacing your secret for `XXX`.
 
 
 #### Linux
 
-1. Run `docker run -e "DARKSKY_SECRET=XXX" forecast` to run the executable inside the Docker container.
+1. Run `docker run -e "DARKSKY_SECRET=XXX" forecast` to run the executable inside the Docker container, replacing your
+   secret for `XXX`.
 
 
